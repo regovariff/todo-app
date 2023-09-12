@@ -1,11 +1,22 @@
+import Card from "./Card";
 
-function TodoItem() {
+interface DataList {
+    id: number;
+    text: string;
+}
 
-    return (
-        <>
-        <h1>TodoItem</h1>
-        </>
-    );
+interface TodoItemProps {
+  item: DataList;
+}
+
+function TodoItem({ item }: TodoItemProps) {
+  return (
+    <>
+      <Card>
+        <div>{item.text}</div>
+      </Card>
+    </>
+  );
 }
 
 export default TodoItem;
