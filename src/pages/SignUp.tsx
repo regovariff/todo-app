@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import "../App.css";
+import InputContainer from "../components/InputContainer";
 
 function SignUp() {
   interface User {
@@ -58,7 +60,7 @@ function SignUp() {
       <div>
         <h1>Sign Up</h1>
         <form onSubmit={onSubmit}>
-          <div>
+          <InputContainer>
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -67,8 +69,8 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </div>
-          <div>
+          </InputContainer>
+          <InputContainer>
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -77,8 +79,8 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </div>
-          <div>
+          </InputContainer>
+          <InputContainer>
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -87,7 +89,7 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </div>
+          </InputContainer>
           <Button onClick={onSubmit}>Sign Up</Button>
         </form>
       </div>

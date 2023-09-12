@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+/* input styling */
+
+input {
+  outline: none;
+  border: none;
+  display:block;
+  width: 20rem;
+  line-height: 1.2em;
+  font-size: 14pt;
+}
+
+label {
+  text-align: left;
+  display: block;
+  font-size: 12px;
+  color: grey;
+}
+
+/* input styling */
