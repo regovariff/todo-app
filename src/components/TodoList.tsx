@@ -16,7 +16,7 @@ function TodoList({ listdata }: TodoListProps) {
 
   return (
     <>
-      <h1>To Do List</h1>
+    <h1>To Do List</h1>
       <div>
         {listdata.map((item) => (
           <TodoItem key={item.id} item={item} />
