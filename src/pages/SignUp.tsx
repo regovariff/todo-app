@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 function SignUp() {
   interface User {
@@ -87,7 +88,7 @@ function SignUp() {
               required
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <Button onClick={onSubmit}>Sign Up</Button>
         </form>
       </div>
     </>
