@@ -38,7 +38,7 @@ function SignIn() {
       if (matchedUser) {
         // Save logged-in user in localStorage
         localStorage.setItem("loggedUser", JSON.stringify(matchedUser));
-        navigate("/profile");
+        navigate("/todopage");
       } else {
         throw new Error("Invalid credentials");
       }
