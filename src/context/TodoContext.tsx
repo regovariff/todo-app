@@ -21,6 +21,11 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }
 
+  const addItem = (newItem: DataList) => {
+    newItem.id = listdata.length + 1;
+    setListData([newItem, ...listdata])
+  }
+
   return (
     <TodoContext.Provider
       value={{

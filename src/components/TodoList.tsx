@@ -16,7 +16,6 @@ function TodoList() {
 
   return (
     <>
-    <h1>To Do List</h1>
       <div>
         {listdata.map((item: DataList) => (
           <TodoItem key={item.id} item={item} />
