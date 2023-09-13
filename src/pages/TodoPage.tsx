@@ -1,19 +1,13 @@
 import { useState } from "react";
 import TodoList from "../components/TodoList";
 import TodoData from "../data/TodoData";
+import TodoAdd from "../components/TodoAdd";
 import Button from "../components/Button";
 
 function TodoPage() {
-  interface DataList {
-    id: number;
-    text: string;
-  }
-
-  const [listdata, setListData] = useState<DataList[]>(TodoData);
 
   const addNote = () => {
     console.log("add");
-    
   };
 
   return (
@@ -23,6 +17,7 @@ function TodoPage() {
         <Button onClick={addNote}>Add Note</Button>
       </div>
       <div>
+        <TodoAdd />
         <TodoList />
       </div>
     </>

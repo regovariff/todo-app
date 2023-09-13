@@ -31,6 +31,7 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
       value={{
         listdata,
         deleteItem,
+        addItem,
       }}
     >
       {children}
