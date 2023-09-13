@@ -15,24 +15,18 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-
-  &:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
 `;
 
 // Define the ButtonProps interface for any additional props
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  disabled?: boolean;
 }
 
 // Create the Button component
-const Button: React.FC<ButtonProps> = ({ children, onClick, disabled }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled}>
+    <StyledButton onClick={onClick}>
       {children}
     </StyledButton>
   );

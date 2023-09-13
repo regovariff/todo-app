@@ -22,6 +22,7 @@ function SignUp() {
   const navigate = useNavigate();
 
   const users = useMemo(() => {
+    //make sure the ts can identify the data type
     const storedUsers = localStorage.getItem("users");
     return storedUsers ? JSON.parse(storedUsers) : [];
   }, []);
