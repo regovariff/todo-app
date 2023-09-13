@@ -1,13 +1,14 @@
-import { useState } from "react";
 import TodoList from "../components/TodoList";
-import TodoData from "../data/TodoData";
 import TodoAdd from "../components/TodoAdd";
 import Button from "../components/Button";
+import { useState } from "react";
 
 function TodoPage() {
+  const [isVisible, setIsVisible] = useState(false);
 
   const addNote = () => {
     console.log("add");
+    setIsVisible(!isVisible);
   };
 
   return (
@@ -17,7 +18,7 @@ function TodoPage() {
         <Button onClick={addNote}>Add Note</Button>
       </div>
       <div>
-        <TodoAdd />
+        {isVisible && <TodoAdd />}
         <TodoList />
       </div>
     </>
