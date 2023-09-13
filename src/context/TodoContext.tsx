@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import TodoData from "../data/TodoData";
 
 const TodoContext = createContext<any>(null);
 
@@ -8,12 +9,7 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     text: string;
   }
 
-  const [listdata, setListData] = useState<DataList[]>([
-    {
-      id: 1,
-      text: "context",
-    },
-  ]);
+  const [listdata, setListData] = useState<DataList[]>(TodoData);
 
   const deleteItem = (id: number) => {
     if(window.confirm('Delete?')) {

@@ -8,7 +8,7 @@ function Profile() {
   const navigate = useNavigate();
 
   const onLogout = () => {
-    // localStorage.removeItem("loggedUser");
+    localStorage.removeItem("loggedUser");
     navigate("/");
   };
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Define the button's styles using styled-components
 const StyledButton = styled.button`
-  background-color: #007bff;
+  background-color: grey;
   color: #fff;
   font-size: 16px;
   margin-top: 1rem;

@@ -7,7 +7,6 @@ function TodoPage() {
   const [isVisible, setIsVisible] = useState(false);
 
   const addNote = () => {
-    console.log("add");
     setIsVisible(!isVisible);
   };
 
@@ -15,7 +14,7 @@ function TodoPage() {
     <>
       <div>
         <h1>To Do List</h1>
-        <Button onClick={addNote}>Add Note</Button>
+        <Button onClick={addNote}>{isVisible ? "Hide" : "Add Note"}</Button>
       </div>
       <div>
         {isVisible && <TodoAdd />}
