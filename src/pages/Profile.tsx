@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "../components/Button";
+import Navigation from "../components/Navigation";
 
 function Profile() {
   const [userData, setUserData] = useState({ name: "", email: "" });
@@ -32,13 +33,10 @@ function Profile() {
   return (
     <>
       <h1>Profile</h1>
-      <Button
-        onClick={onLogout}
-      >
-        Logout
-      </Button>
+      <Navigation />
+      <Button onClick={onLogout}>Logout</Button>
       <br />
-      <div>
+      <div className="profile-info">
         <h2>Name: {userData.name}</h2>
         <h2>Email: {userData.email}</h2>
       </div>
