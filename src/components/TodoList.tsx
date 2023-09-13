@@ -1,15 +1,15 @@
 import TodoItem from "./TodoItem";
+import { useContext } from "react";
+import TodoContext from "../context/TodoContext";
 
 interface DataList {
   id: number;
   text: string;
 }
 
-interface TodoListProps {
-  listdata: DataList[];
-}
+function TodoList() {
+  const {listdata} = useContext(TodoContext);
 
-function TodoList({ listdata }: TodoListProps) {
   if (!listdata || listdata.length === 0) {
     return <p>Nothing here yet</p>;
   }
@@ -18,7 +18,7 @@ function TodoList({ listdata }: TodoListProps) {
     <>
     <h1>To Do List</h1>
       <div>
-        {listdata.map((item) => (
+        {listdata.map((item: DataList) => (
           <TodoItem key={item.id} item={item} />
         ))}
       </div>

@@ -1,6 +1,9 @@
 import { FaTimes } from 'react-icons/fa';
 import Card from "./Card";
 
+import { useContext } from "react";
+import TodoContext from "../context/TodoContext";
+
 interface DataList {
     id: number;
     text: string;
@@ -12,15 +15,12 @@ interface TodoItemProps {
 
 function TodoItem({ item }: TodoItemProps) {
 
-  const handleClick = (id: number) => {
-    console.log(id);
-    
-  }
+  const {deleteItem} = useContext(TodoContext);
 
   return (
     <>
       <Card>
-        <button onClick={() => handleClick(item.id)} className='close'>
+        <button onClick={() => deleteItem(item.id)} className='close'>
           <FaTimes color='white' />
         </button>
         <div>{item.text}</div>

@@ -13,7 +13,7 @@ function TodoPage() {
     return (
         <>
             <div>
-                <TodoList listdata={listdata} />
+                <TodoList />
             </div>
         </>
     );
