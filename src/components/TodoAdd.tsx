@@ -3,17 +3,17 @@ import Card from "./Card";
 import { useContext, useState, useEffect } from "react";
 import TodoContext from "../context/TodoContext";
 
-function TodoAdd() {
+function TodoAdd({answer}:any) {
   const [text, setText] = useState("");
 
   const { addItem, itemEdit } = useContext(TodoContext);
 
   //edit
-  // useEffect(() => {
-  //   if(itemEdit.edit === true){
-  //     setText(itemEdit.item.text)
-  //   }
-  // }, [itemEdit])
+  useEffect(() => {
+    if(itemEdit.edit === true){
+      setText(answer)
+    }
+  }, [itemEdit])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -20,7 +20,7 @@ function TodoItem({ item }: TodoItemProps) {
   return (
     <>
       <Card>
-      <button onClick={() => editItem(item.id)} className='edit'>
+      <button onClick={() => editItem(item)} className='edit'>
           <FaEdit color='white' />
         </button>
         <button onClick={() => deleteItem(item.id)} className='close'>

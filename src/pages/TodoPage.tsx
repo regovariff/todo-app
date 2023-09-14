@@ -1,11 +1,24 @@
 import TodoList from "../components/TodoList";
 import TodoAdd from "../components/TodoAdd";
 import Button from "../components/Button";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Navigation from "../components/Navigation";
+import TodoContext from "../context/TodoContext";
 
 function TodoPage() {
   const [isVisible, setIsVisible] = useState(false);
+
+  const { itemEdit } = useContext(TodoContext);
+
+  const [answer, setAnswer] = useState("");
+
+  //edit
+  useEffect(() => {
+    if(itemEdit.edit === true){
+      console.log(answer)
+      setAnswer(itemEdit.item.text);
+    }
+  }, [itemEdit])
 
   const addNote = () => {
     setIsVisible(!isVisible);
@@ -21,7 +34,7 @@ function TodoPage() {
         <Button onClick={addNote}>{isVisible ? "Hide" : "Add Note"}</Button>
       </div>
       <div>
-        {isVisible && <TodoAdd />}
+        {isVisible && <TodoAdd answer={answer}/>}
         <TodoList />
       </div>
     </>
