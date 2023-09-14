@@ -179,4 +179,8 @@ form .txt_field{
   margin-bottom: 1rem;
 }
 
+.profilepage .profile-info{
+  font-weight: bold;
+}
+
 /* --------- profile page --------- */

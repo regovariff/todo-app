@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navigation() {
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    localStorage.removeItem("loggedUser");
+    navigate("/");
+  };
   return (
     <nav className="navigation-container">
       <ul>
@@ -13,6 +19,9 @@ function Navigation() {
           <Link to="/todopage" className="nav-link">
             ToDo-List
           </Link>
+        </li>
+        <li className="logout" >
+          <button onClick={onLogout}>Logout</button>
         </li>
       </ul>
     </nav>

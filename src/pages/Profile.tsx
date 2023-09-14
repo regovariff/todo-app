@@ -1,18 +1,9 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Button from "../components/Button";
 import Navigation from "../components/Navigation";
 import Card from "../components/Card";
 
 function Profile() {
   const [userData, setUserData] = useState({ name: "", email: "" });
-
-  const navigate = useNavigate();
-
-  const onLogout = () => {
-    localStorage.removeItem("loggedUser");
-    navigate("/");
-  };
 
   useEffect(() => {
     // Retrieve user data from local storage
@@ -38,7 +29,6 @@ function Profile() {
       </div>
       <div className="profilepage">
         <h1>Profile</h1>
-        <Button onClick={onLogout}>Logout</Button>
         <br />
         <Card>
           <div className="profile-info">
