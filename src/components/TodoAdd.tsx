@@ -6,7 +6,7 @@ import TodoContext from "../context/TodoContext";
 function TodoAdd({answer}:any) {
   const [text, setText] = useState("");
 
-  const { addItem, itemEdit } = useContext(TodoContext);
+  const { addItem, itemEdit, updateItem } = useContext(TodoContext);
 
   //edit
   useEffect(() => {
@@ -21,7 +21,11 @@ function TodoAdd({answer}:any) {
       text,
     };
 
-    addItem(newItem);
+    if(itemEdit.edit === true) {
+      updateItem(itemEdit.item.id, newItem)
+    } else {
+      addItem(newItem)
+    }
 
     setText("");
   };

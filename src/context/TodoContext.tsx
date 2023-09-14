@@ -35,6 +35,14 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
+  //update the data
+  const updateItem = (id: number, updItem: any) => {
+    // console.log(id, updItem);
+    setListData(
+      listdata.map((item) => (item.id === id ? {...item, ...updItem} : item))
+    )
+  }
+
   return (
     <TodoContext.Provider
       value={{
@@ -43,6 +51,7 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
         addItem,
         editItem,
         itemEdit,
+        updateItem,
       }}
     >
       {children}
