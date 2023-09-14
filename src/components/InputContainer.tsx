@@ -1,9 +1,13 @@
-import styled from "styled-components";
+interface InputContainerProps {
+  children: React.ReactNode;
+}
 
-const InputContainer = styled.div`
-  margin-bottom: 10px;
-  padding: 3px;
-  border: 2px solid grey;
-`;
+const InputContainer: React.FC<InputContainerProps> = ({ children }) => {
+  return (
+    <div className="inputContainer">
+      {children}
+    </div>
+  )
+}
 
 export default InputContainer;
