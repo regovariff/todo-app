@@ -6,15 +6,15 @@ interface DataList {
 const TodoData: DataList[] = [
     {
         id: 1,
-        text: 'Item number 1'
+        text: 'Study Typescript'
     },
     {
         id: 2,
-        text: 'Item number 2'
+        text: 'JS exercise'
     },
     {
         id: 3,
-        text: 'Item number 3'
+        text: 'Workout n gym'
     },
 ]
 

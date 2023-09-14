@@ -51,6 +51,10 @@ h1 {
   border: none;
 }
 
+.edit {
+  right: 40px;
+}
+
 .input-group {
   display: flex;
   flex-direction: row;

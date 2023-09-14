@@ -1,12 +1,19 @@
 import Button from "./Button";
 import Card from "./Card";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import TodoContext from "../context/TodoContext";
 
 function TodoAdd() {
   const [text, setText] = useState("");
 
-  const { addItem } = useContext(TodoContext);
+  const { addItem, itemEdit } = useContext(TodoContext);
+
+  //edit
+  // useEffect(() => {
+  //   if(itemEdit.edit === true){
+  //     setText(itemEdit.item.text)
+  //   }
+  // }, [itemEdit])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

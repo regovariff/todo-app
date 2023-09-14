@@ -1,4 +1,4 @@
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaEdit } from 'react-icons/fa';
 import Card from "./Card";
 
 import { useContext } from "react";
@@ -15,11 +15,14 @@ interface TodoItemProps {
 
 function TodoItem({ item }: TodoItemProps) {
 
-  const {deleteItem} = useContext(TodoContext);
+  const {deleteItem, editItem} = useContext(TodoContext);
 
   return (
     <>
       <Card>
+      <button onClick={() => editItem(item.id)} className='edit'>
+          <FaEdit color='white' />
+        </button>
         <button onClick={() => deleteItem(item.id)} className='close'>
           <FaTimes color='white' />
         </button>
