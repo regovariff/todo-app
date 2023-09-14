@@ -58,11 +58,10 @@ function SignUp() {
 
   return (
     <>
-      <div>
+      <div className="center">
         <h1>Sign Up</h1>
         <form onSubmit={onSubmit}>
-          <InputContainer>
-            <label htmlFor="name">Name</label>
+          <div className="txt_field">
             <input
               type="text"
               id="name"
@@ -70,9 +69,10 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </InputContainer>
-          <InputContainer>
-            <label htmlFor="email">Email</label>
+            <span></span>
+            <label htmlFor="name">Name</label>
+          </div>
+          <div className="txt_field">
             <input
               type="email"
               id="email"
@@ -80,9 +80,10 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </InputContainer>
-          <InputContainer>
-            <label htmlFor="password">Password</label>
+            <span></span>
+            <label htmlFor="email">Email</label>
+          </div>
+          <div className="txt_field">
             <input
               type="password"
               id="password"
@@ -90,8 +91,13 @@ function SignUp() {
               onChange={onChange}
               required
             />
-          </InputContainer>
+            <span></span>
+            <label htmlFor="password">Password</label>
+          </div>
           <Button onClick={onSubmit}>Sign Up</Button>
+          <div className="signup_link">
+            Already have an account? <a href="/sign-in">Login</a>
+          </div>
         </form>
       </div>
     </>
