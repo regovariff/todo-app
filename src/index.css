@@ -9,7 +9,7 @@
 body {
   margin: 0;
   display: flex;
-  background: #d7d5cb;
+  background: #faf0e6;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -63,7 +63,7 @@ h1 {
 }
 
 .navigation-container {
-  background-color: #d16002;
+  background-color: #352f44;
   padding: 10px;
   margin-bottom: 20px;
   position: fixed; /* Set the navigation bar to a fixed position */
