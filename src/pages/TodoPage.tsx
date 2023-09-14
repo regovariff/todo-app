@@ -13,9 +13,11 @@ function TodoPage() {
 
   return (
     <>
-      <div>
-        <h1>To Do List</h1>
+      <div className="nav">
         <Navigation />
+      </div>
+      <div className="todopage">
+        <h1>To Do List</h1>
         <Button onClick={addNote}>{isVisible ? "Hide" : "Add Note"}</Button>
       </div>
       <div>

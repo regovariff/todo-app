@@ -1,24 +1,21 @@
-import { useNavigate } from "react-router-dom";
-import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function Navigation() {
-  const navigate = useNavigate();
-
-  const profileClick = () => {
-    navigate("/profile")
-  }
-
-  const listClick = () => {
-    navigate("/todopage")
-  }
-
   return (
-    <>
-      <div className="navigation-container">
-        <Button onClick={profileClick}>Profile</Button>
-        <Button onClick={listClick}>ToDo-List</Button>
-      </div>
-    </>
+    <nav className="navigation-container">
+      <ul>
+        <li>
+          <Link to="/profile" className="nav-link">
+            Profile
+          </Link>
+        </li>
+        <li>
+          <Link to="/todopage" className="nav-link">
+            ToDo-List
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
