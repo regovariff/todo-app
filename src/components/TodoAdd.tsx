@@ -13,7 +13,7 @@ function TodoAdd({answer}:any) {
     if(itemEdit.edit === true){
       setText(answer)
     }
-  }, [itemEdit])
+  }, [answer])
 
   // when submit, the button will decide edit or add based on itemedit.edit boolean
   const handleSubmit = (e: React.FormEvent) => {

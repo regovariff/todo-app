@@ -6,19 +6,18 @@ import Navigation from "../components/Navigation";
 import TodoContext from "../context/TodoContext";
 
 function TodoPage() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const { itemEdit } = useContext(TodoContext);
 
   const [answer, setAnswer] = useState("");
 
-  //edit
+  //get the state of the click
   useEffect(() => {
     if(itemEdit.edit === true){
-      console.log(answer)
       setAnswer(itemEdit.item.text);
     }
-  }, [itemEdit])
+  }, [itemEdit.item.id])
 
   const addNote = () => {
     setIsVisible(!isVisible);
