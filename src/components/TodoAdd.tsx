@@ -8,13 +8,14 @@ function TodoAdd({answer}:any) {
 
   const { addItem, itemEdit, updateItem } = useContext(TodoContext);
 
-  //edit
+  // edit the note
   useEffect(() => {
     if(itemEdit.edit === true){
       setText(answer)
     }
   }, [itemEdit])
 
+  // when submit, the button will decide edit or add based on itemedit.edit boolean
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newItem = {
@@ -30,6 +31,7 @@ function TodoAdd({answer}:any) {
     setText("");
   };
 
+  // get the value of the input
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };

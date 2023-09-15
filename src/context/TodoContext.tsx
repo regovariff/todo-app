@@ -1,31 +1,23 @@
 import { createContext, useState } from "react";
 import TodoData from "../data/TodoData";
 
+interface DataList {
+  id: number;
+  text: string;
+}
+
 const TodoContext = createContext<any>(null);
 
 export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
-  interface DataList {
-    id: number;
-    text: string;
-  }
 
+  // get the hardcoded data
   const [listdata, setListData] = useState<DataList[]>(TodoData);
 
+  // object for getting the edit state
   const [itemEdit, setItemEdit] = useState({
     item: {},
     edit: false,
   })
-
-  const deleteItem = (id: number) => {
-    if(window.confirm('Delete?')) {
-        setListData(listdata.filter((item) => item.id !== id))
-    }
-  }
-
-  const addItem = (newItem: DataList) => {
-    newItem.id = listdata.length + 1;
-    setListData([newItem, ...listdata])
-  }
 
   //update item in input field
   const editItem = (item: any) => {
@@ -33,6 +25,19 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
       item,
       edit: true,
     })
+  }
+
+  // delete item
+  const deleteItem = (id: number) => {
+    if(window.confirm('Delete?')) {
+        setListData(listdata.filter((item) => item.id !== id))
+    }
+  }
+
+  // add item
+  const addItem = (newItem: DataList) => {
+    newItem.id = listdata.length + 1;
+    setListData([newItem, ...listdata])
   }
 
   //update the data

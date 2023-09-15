@@ -2,15 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import "../App.css";
-import InputContainer from "../components/InputContainer";
+
+interface User {
+  name: string;
+  email: string;
+  password: string;
+}
 
 function SignUp() {
-  interface User {
-    name: string;
-    email: string;
-    password: string;
-  }
-
   const [user, setUser] = useState<User>({
     name: "",
     email: "",
