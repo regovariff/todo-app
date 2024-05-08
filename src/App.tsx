@@ -19,7 +19,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Navigate to="/sign-in" />} />
-            <Route path="/sign-up" element={<SignUp />} />
+            {/* <Route path="/sign-up" element={<SignUp />} /> */}
             {/* <Route path="/sign-in" element={<SignIn />} /> */}
             <Route path="/profile" element={<Profile />} />
             <Route path="/todopage" element={<TodoPage />} />
